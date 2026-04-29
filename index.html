@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>法律类案分析 - 网页入口</title>
+  <style>
+    :root {
+      --bg: #f3f5fb;
+      --panel: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --border: #e5e7eb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f7f8fc 0%, var(--bg) 100%);
+    }
+    .topbar {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      background: #ffffffd9;
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .title { font-weight: 700; }
+    .links a {
+      color: #fff;
+      text-decoration: none;
+      background: var(--primary);
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-left: 8px;
+    }
+    .hint {
+      margin: 12px 18px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    iframe {
+      width: calc(100vw - 36px);
+      height: calc(100vh - 110px);
+      margin: 12px 18px 18px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+    }
+    code {
+      background: #eef2ff;
+      border-radius: 6px;
+      padding: 2px 6px;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="title">法律类案分析（HTML 入口页）</div>
+    <div class="links">
+      <a href="http://localhost:8501" target="_blank" rel="noopener noreferrer">打开本地版</a>
+      <a href="https://your-app-name.streamlit.app" target="_blank" rel="noopener noreferrer">打开公网版</a>
+    </div>
+  </header>
+
+  <p class="hint">
+    说明：Python/Streamlit 不能直接转成纯静态 HTML。这个页面通过 iframe 嵌入应用。若本地未启动，请先执行
+    <code>streamlit run app.py</code>。
+  </p>
+
+  <iframe
+    src="http://localhost:8501"
+    title="法律类案分析应用"
+    loading="eager"
+    referrerpolicy="no-referrer"
+  ></iframe>
+</body>
+</html>
